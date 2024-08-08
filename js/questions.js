@@ -48,19 +48,20 @@ function expandProgress(){
 // //   // progressValueEl.style.width = ((currentNumber+1) * 10) + '%'
 // //   progressValueEl.style.width = (progressValueEl.style.width+1)* 10 + '%'
 
- // 현재 width 값을 가져옵니다 (px 단위).
- const currentWidth = parseFloat(window.getComputedStyle(progressValueEl).getPropertyValue('width'));
+//  // 현재 width 값을 가져옵니다 (px 단위).
+//  const currentWidth = parseFloat(window.getComputedStyle(progressValueEl).getPropertyValue('width'));
 
- // 전체 progress bar의 너비를 가져옵니다.
- const totalWidth = parseFloat(window.getComputedStyle(progressValueEl.parentElement).getPropertyValue('width'));
+//  // 전체 progress bar의 너비를 가져옵니다.
+//  const totalWidth = parseFloat(window.getComputedStyle(progressValueEl.parentElement).getPropertyValue('width'));
 
- // 현재 width를 비율(%)로 변환합니다.
- const currentWidthPercent = (currentWidth / totalWidth) * 100;
+//  // 현재 width를 비율(%)로 변환합니다.
+//  const currentWidthPercent = (currentWidth / totalWidth) * 100;
 
- console.log("width : " + currentWidthPercent)
+//  console.log("width : " + currentWidthPercent)
 
  // 새로운 width 값을 설정합니다.
- const newWidthPercent = currentWidthPercent + 10; // 10%씩 증가
+ console.log(currentNumber)
+ const newWidthPercent = (currentNumber * 10); // 10%씩 증가
  progressValueEl.style.width = newWidthPercent + '%';
 
 
