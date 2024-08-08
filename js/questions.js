@@ -17,6 +17,7 @@ function renderQuestion() {
   questionEl.innerHTML = question.question
   choice1El.innerHTML= question.choices[0].text
   choice2El.innerHTML = question.choices[1].text
+  expandProgress();
 }
 
 choice1El.addEventListener('click',function(){
@@ -27,13 +28,14 @@ choice2El.addEventListener('click',function(){
 })
 
 function nextRenderQuestion(choiceNum) {
-  if(currentNumber===9)
+  
+  if(currentNumber===questions.length-1){
     location.href = '/results.html?mbti='+mbti
-
+    return;
+  }
   const question = questions[currentNumber]
   mbti = mbti+ question['choices'][choiceNum].value
   currentNumber = currentNumber+ 1;
-  expandProgress();
   renderQuestion();
 }
 //노란색 프로그래스바
@@ -60,10 +62,9 @@ function expandProgress(){
 //  console.log("width : " + currentWidthPercent)
 
  // 새로운 width 값을 설정합니다.
- console.log(currentNumber)
- const newWidthPercent = (currentNumber * 10); // 10%씩 증가
+ const newWidthPercent = ((currentNumber+1) * 10); // 10%씩 증가
  progressValueEl.style.width = newWidthPercent + '%';
-
+ 
 
 
 }
