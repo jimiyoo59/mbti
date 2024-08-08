@@ -1,7 +1,9 @@
 import { mbtis, results } from "./data.js";
 
+  console.log(location.href)
   // user의 답변에 따라 넘어온 mbti 값. 쿼리 파라미터 추출
   const fromUserMbti = new URLSearchParams(window.location.search).get('mbti');
+  
 
   //results에서 가져올 데이터의 index
   const renderingNum = mbtis[fromUserMbti]
